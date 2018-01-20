@@ -2,14 +2,17 @@ import React from 'react';
 import './GuestLayout.css';
 
 export default props => (
-  <template name="guestLayout">
-    <section className="section">
-      <div className="container guest-container">
-        <h1 className="title has-text-primary">Accounts Manager</h1>
-        <div className="box">
-          {props.page}
-        </div>
+  <section className="section">
+    <div className="fluid-container guest-container">
+      <div className="app-title">
+        <img src="/logo.png" alt="WebDrvn" width="112" height="28" />
+        &nbsp;&nbsp;
+        <h1 className="subtitle is-3 has-text-primary">Snap</h1>
       </div>
-    </section>
-  </template>
+      <div className="space-block" />
+      <div className="box">
+        {props.page}
+      </div>
+    </div>
+  </section>
 );
