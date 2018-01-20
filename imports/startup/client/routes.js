@@ -7,7 +7,10 @@ import React from 'react';
 import GuestLayout from '../../ui/layouts/GuestLayout.jsx';
 import UserLayoutContainer from '../../ui/layouts/UserLayoutContainer.jsx';
 
-import Signin from '../../ui/pages/Signin.jsx';
+import TransactionsListContainer from '../../ui/pages/transactions/TransactionsListContainer.jsx';
+import InsertTransactionContainer from '../../ui/pages/transactions/InsertTransactionContainer.jsx';
+
+import Signin from '../../ui/pages/guest/Signin.jsx';
 
 const GUEST_ROUTES = ['signin'];
 
@@ -40,9 +43,16 @@ FlowRouter.route('/signin', {
   }
 });
 
-FlowRouter.route('/', {
+FlowRouter.route('/transactions', {
   name: 'transactions',
   action() {
-    mount(UserLayoutContainer, { page: <TransactionsContainer /> });
+    mount(UserLayoutContainer, { page: <TransactionsListContainer /> });
+  }
+});
+
+FlowRouter.route('/', {
+  name: 'insertTransaction',
+  action() {
+    mount(UserLayoutContainer, { page: <InsertTransactionContainer /> });
   }
 });

@@ -1,8 +1,8 @@
 import { Meteor } from 'meteor/meteor';
 import React from 'react';
 
-import Loading from '../components/Loading.jsx';
-import ErrorMessage from '../components/ErrorMessage.jsx';
+import Loading from '../../components/Loading.jsx';
+import ErrorMessage from '../../components/ErrorMessage.jsx';
 
 export default class extends React.Component {
   constructor(props) {
