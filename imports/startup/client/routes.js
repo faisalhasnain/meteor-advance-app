@@ -13,10 +13,11 @@ import InsertTransactionContainer from '../../ui/pages/transactions/InsertTransa
 import Signin from '../../ui/pages/guest/Signin.jsx';
 
 const GUEST_ROUTES = ['signin'];
+const HOME_ROUTE = '/transactions';
 
 Accounts.onLogin(() => {
   if (GUEST_ROUTES.includes(FlowRouter.getRouteName())) {
-    FlowRouter.go('/transactions');
+    FlowRouter.go(HOME_ROUTE);
   }
 });
 
@@ -32,7 +33,7 @@ FlowRouter.triggers.enter([(context, redirect) => {
 
 FlowRouter.triggers.enter([(context, redirect) => {
   if (Meteor.userId()) {
-    redirect('/transactions');
+    redirect(HOME_ROUTE);
   }
 }], { only: GUEST_ROUTES });
 
