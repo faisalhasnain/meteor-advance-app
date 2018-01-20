@@ -35,7 +35,8 @@ export default class extends React.Component {
           const credits = Transactions.find({ type: 'Credit' }, { fields: { amount: 1 } }).fetch().map(t => t.amount).reduce((total, val) => total + val, 0);
           const debits = Transactions.find({ type: 'Debit' }, { fields: { amount: 1 } }).fetch().map(t => t.amount).reduce((total, val) => total + val, 0);
           const balance = credits - debits;
-          const { currency } = Meteor.user().profile;
+          const user = Meteor.user();
+          const { currency } = user ? user.profile : {};
           this.setState({ loading: false, transactions, balance, currency });
         });
       }

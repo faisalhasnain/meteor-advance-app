@@ -44,6 +44,13 @@ FlowRouter.route('/signin', {
   }
 });
 
+FlowRouter.route('/', {
+  name: 'home',
+  action() {
+    FlowRouter.go(HOME_ROUTE);
+  }
+});
+
 FlowRouter.route('/transactions', {
   name: 'transactions',
   action() {
