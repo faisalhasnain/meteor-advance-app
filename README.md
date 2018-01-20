@@ -1,6 +1,6 @@
 ## Technologies Used
 - Platform/Framework: [Meteor](https://www.meteor.com)
-- View Library: [Blaze](http://blazejs.org)
+- View Library: [React](http://reactjs.org)
 - CSS Library: [Bulma](http://bulma.io)
 - Database: [MongoDB](https://www.mongodb.com)
 
