@@ -68,6 +68,8 @@ export default class extends React.Component {
             ))}
           </tbody>
         </table>
+        <div className="space-block" />
+        <span className="tag is-rounded is-success is-large has-text-centered">Balance: {this.props.balance.toLocaleString()}&nbsp;{this.props.currency}</span>
         <div id="confirm-container" />
       </div>
     );

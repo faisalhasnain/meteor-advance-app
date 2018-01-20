@@ -9,7 +9,7 @@ export default class extends React.Component {
     super(props);
     this.state = {
       transaction: {
-        description: '', type: '', amount: ''
+        description: '', type: 'Debit', amount: ''
       },
       error: ''
     };
@@ -43,12 +43,6 @@ export default class extends React.Component {
           {this.state.error ? <ErrorMessage error={this.state.error} /> : ''}
           <form onSubmit={this.handleSubmit}>
             <div className="field">
-              <label className="label">Title</label>
-              <div>
-                <input name="description" className="input" type="text" placeholder="Description" required value={this.state.transaction.description} onChange={this.handleInputChange} />
-              </div>
-            </div>
-            <div className="field">
               <label className="label">Type</label>
               <div className="control">
                 <label className="radio" htmlFor="type1">
@@ -57,6 +51,12 @@ export default class extends React.Component {
                 <label className="radio" htmlFor="type2">
                   <input id="type2" name="type" type="radio" value="Credit" checked={this.state.transaction.type === 'Credit'} onChange={this.handleInputChange} /> Credit
                 </label>
+              </div>
+            </div>
+            <div className="field">
+              <label className="label">Title</label>
+              <div>
+                <input name="description" className="input" type="text" placeholder="Description" required value={this.state.transaction.description} onChange={this.handleInputChange} />
               </div>
             </div>
             <div className="field">
