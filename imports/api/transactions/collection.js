@@ -4,7 +4,7 @@ import BaseSchema from '../../utils/base-schema';
 
 export const Transactions = new Mongo.Collection('transactions');
 
-Transactions.schema = new SimpleSchema({
+const TransactionsSchema = new SimpleSchema({
   description: {
     type: String
   },
@@ -23,4 +23,4 @@ Transactions.deny({
   remove() { return true; }
 });
 
-Transactions.attachSchema(Transactions.schema);
+Transactions.attachSchema(TransactionsSchema);
