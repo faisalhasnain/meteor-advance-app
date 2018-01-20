@@ -1,15 +1,46 @@
+import { Meteor } from 'meteor/meteor';
 import { FlowRouter } from 'meteor/kadira:flow-router';
-import { BlazeLayout } from 'meteor/kadira:blaze-layout';
+import { mount } from 'react-mounter';
+import { Accounts } from 'meteor/accounts-base';
+import React from 'react';
 
-import '../../ui/layouts/user-layout.js';
-import '../../ui/layouts/guest-layout.js';
+import GuestLayout from '../../ui/layouts/GuestLayout.jsx';
+import UserLayoutContainer from '../../ui/layouts/UserLayoutContainer.jsx';
 
-import '../../ui/pages/transactions.js';
+const GUEST_ROUTES = ['signin'];
 
+Accounts.onLogin(() => {
+  if (GUEST_ROUTES.includes(FlowRouter.getRouteName())) {
+    FlowRouter.go('/');
+  }
+});
+
+Accounts.onLogout(() => {
+  FlowRouter.go('/signin');
+});
+
+FlowRouter.triggers.enter([(context, redirect) => {
+  if (!Meteor.userId()) {
+    redirect('/signin');
+  }
+}], { except: GUEST_ROUTES });
+
+FlowRouter.triggers.enter([(context, redirect) => {
+  if (Meteor.userId()) {
+    redirect('/');
+  }
+}], { only: GUEST_ROUTES });
+
+FlowRouter.route('/signin', {
+  name: 'signin',
+  action() {
+    mount(GuestLayout, { page: <Signin /> });
+  }
+});
 
 FlowRouter.route('/', {
   name: 'transactions',
   action() {
-    BlazeLayout.render('userLayout', { page: 'listTransactions' });
+    mount(UserLayoutContainer, { page: <TransactionsContainer /> });
   }
 });
