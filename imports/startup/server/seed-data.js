@@ -1,11 +1,11 @@
 export const users = [
   {
-    email: 'faisal.hasnain@icloud.com',
-    password: 'master@pass.123',
+    email: 'email@domain.com',
+    password: 'pass@123',
     profile: {
       firstName: 'Faisal',
       lastName: 'Hasnain',
-      currency: 'PKR'
+      currency: 'USD'
     }
   }
 ];
