@@ -10,8 +10,7 @@ export default withTracker(() => {
   const user = loading ? {} : {
     firstName: userInfo.profile.firstName,
     lastName: userInfo.profile.lastName,
-    email: userInfo.emails[0].address,
-    isAdmin: !!(userInfo.roles && userInfo.roles.includes('admin'))
+    email: userInfo.emails[0].address
   };
   return {
     loading,
