@@ -10,8 +10,8 @@ export default class UserLayout extends React.Component {
       <div>
         <nav className="navbar is-light">
           <div className="navbar-brand">
-            <a className="navbar-item" href="/">
-              <h5 className="subtitle is-3 has-text-primary">Meteor Advance App</h5>
+            <a className="navbar-item" href="/transactions">
+              <h5 className="subtitle is-4 has-text-primary">Meteor Advance App</h5>
             </a>
             <div className="navbar-burger burger" data-target="navMenubd-example">
               <span />
@@ -22,8 +22,8 @@ export default class UserLayout extends React.Component {
 
           <div id="navMenubd-example" className="navbar-menu">
             <div className="navbar-start">
-              <a className="navbar-item is-active" href="/">
-                <span className="icon">
+              <a className="navbar-item is-active" href="/transactions">
+                <span className="fa fa-exchange">
                   <i className="" />
                 </span>
                 &nbsp;

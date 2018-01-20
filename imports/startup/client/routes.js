@@ -16,7 +16,7 @@ const GUEST_ROUTES = ['signin'];
 
 Accounts.onLogin(() => {
   if (GUEST_ROUTES.includes(FlowRouter.getRouteName())) {
-    FlowRouter.go('/');
+    FlowRouter.go('/transactions');
   }
 });
 
@@ -32,7 +32,7 @@ FlowRouter.triggers.enter([(context, redirect) => {
 
 FlowRouter.triggers.enter([(context, redirect) => {
   if (Meteor.userId()) {
-    redirect('/');
+    redirect('/transactions');
   }
 }], { only: GUEST_ROUTES });
 
@@ -50,7 +50,7 @@ FlowRouter.route('/transactions', {
   }
 });
 
-FlowRouter.route('/', {
+FlowRouter.route('/transactions/insert', {
   name: 'insertTransaction',
   action() {
     mount(UserLayoutContainer, { page: <InsertTransactionContainer /> });
