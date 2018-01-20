@@ -53,6 +53,6 @@ FlowRouter.route('/transactions', {
 FlowRouter.route('/transactions/insert', {
   name: 'insertTransaction',
   action() {
-    mount(UserLayoutContainer, { page: <InsertTransactionContainer /> });
+    mount(UserLayoutContainer, { page: <InsertTransactionContainer routeName={FlowRouter.getRouteName()} /> });
   }
 });
