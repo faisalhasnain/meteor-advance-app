@@ -21,8 +21,6 @@ grove:call-async
 aldeed:schema-deny
 kadira:blaze-layout
 accounts-password@1.5.0
-useraccounts:flow-routing
 aldeed:collection2-core
-useraccounts:bulma
 static-html
 react-meteor-data
