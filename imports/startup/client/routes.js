@@ -7,6 +7,8 @@ import React from 'react';
 import GuestLayout from '../../ui/layouts/GuestLayout.jsx';
 import UserLayoutContainer from '../../ui/layouts/UserLayoutContainer.jsx';
 
+import Signin from '../../ui/pages/Signin.jsx';
+
 const GUEST_ROUTES = ['signin'];
 
 Accounts.onLogin(() => {
