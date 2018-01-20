@@ -11,7 +11,7 @@ export default class UserLayout extends React.Component {
         <nav className="navbar is-light">
           <div className="navbar-brand">
             <a className="navbar-item" href="/">
-              <h5 className="subtitle is-3 has-text-primary">Meteor Basic App</h5>
+              <h5 className="subtitle is-3 has-text-primary">Meteor Advance App</h5>
             </a>
             <div className="navbar-burger burger" data-target="navMenubd-example">
               <span />
